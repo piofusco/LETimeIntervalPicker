@@ -202,7 +202,7 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     
     // MARK: - Initialization
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         self.componentOne = .Hour(24)
         self.componentTwo = .Minute(60)
         self.componentThree = .Second(60)
@@ -332,7 +332,7 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     func setupPickerView() {
         pickerView.dataSource = self
         pickerView.delegate = self
-        pickerView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(pickerView)
         
         // Size picker view to fit self
